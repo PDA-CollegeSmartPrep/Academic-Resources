@@ -143,8 +143,9 @@
             //trick stop
 
             const token = result;
-            const apiUrl = 'https://api.github.com/repos/${repoOwner}/${repoName}/contents/${TARGET_DIRECTORY}/${file.name}';
+            const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${TARGET_DIRECTORY}/${file.name}`;
 
+            
             try {
                 const content = await readFileAsBase64(file);
                 await uploadToGitHub(apiUrl, token, branch, file.name, content, updateProgress);
